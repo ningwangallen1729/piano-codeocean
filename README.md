@@ -156,4 +156,4 @@ outdir: str = './results/',
 ```
 
 ## Contact:
-<nw8333 at princeton dot edu>
+nw8333 at princeton dot edu
