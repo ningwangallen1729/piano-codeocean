@@ -1,0 +1,20 @@
+# Ignore .DS_Store files created by macOS
+**/.DS_Store
+
+# Ignore IPython/Jupyter Notebook checkpoints in any subdirectory
+**/*.ipynb_checkpoints/
+
+# Ignore Python bytecode files and their directory in any subdirectory
+**/__pycache__/
+**/*.pyc
+
+# Ignore builds and releases
+build/
+piano.egg-info/
+.release/
+
+# Ignore miscellaneous files
+results/
+pytorch.json
+*.nsys-rep
+.vscode/
