@@ -19,6 +19,7 @@
 --find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 # Machine learning imports
+matplotlib
 numpy>=2
 pandas
 scipy
@@ -45,7 +46,6 @@ scib-metrics==0.5.3
 rapids-singlecell[rapids12]==0.13.1
 
 # Optional miscellaneous utilities
-matplotlib
 seaborn
 joblib
 jupyterlab
