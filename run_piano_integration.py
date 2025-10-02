@@ -49,8 +49,9 @@ parser.add_argument("--umap_labels", nargs='*', type=str, help="Colors for UMAPs
 
 args = parser.parse_args()
 if args.rach2:
+    args.rach2 = 'Piano Concerto No. 2 in C minor, Op. 18'
     print("A Monsieur Sergei Rachmaninoff")
-print(args)
+    print(vars(args))
 
 @contextmanager
 def time_code(label='Code Block'):

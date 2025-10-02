@@ -50,7 +50,9 @@ def main():
 
     args = parser.parse_args()
     if args.rach2:
+        args.rach2 = 'Piano Concerto No. 2 in C minor, Op. 18'
         print("A Monsieur Sergei Rachmaninoff")
+        print(vars(args))
 
     @contextmanager
     def time_code(label='Code Block'):

@@ -41,7 +41,7 @@ scib-metrics==0.5.3
 
 # Optional rapids-singlecell imports
 jax[cuda12]
-rapids-singlecell[rapids12]
+rapids-singlecell[rapids12]==0.13.1
 
 # Optional miscellaneous utilities
 matplotlib
