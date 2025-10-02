@@ -19,12 +19,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # piano/__init__.py
 
 # Define package version
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 # Import all modules
 from .models.base_models import Etude, ZinbEtude, PaddedEtude, PaddedZinbEtude, scVI
 from .utils.composer import Composer
 from .utils.data import AnnDataset, SparseGPUAnnDataset, BackedAnnDataset, GPUBatchSampler, streaming_hvg_indices
+from .utils.timer import time_code
 from .utils.triton_sparse import SparseTritonMatrix
 
 # Specify all imports (i.e. `from piano import *`)
@@ -45,6 +46,8 @@ __all__ = [
     'SparseGPUAnnDataset',
     'BackedAnnDataset',
     'streaming_hvg_indices',
+    # # .timer
+    'time_code',
     # # .triton_sparse
     'SparseTritonMatrix',
 ]

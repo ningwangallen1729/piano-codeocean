@@ -4,17 +4,13 @@ import os
 
 os.environ['XLA_PYTHON_CLIENT_PREALLOCATE'] = 'false'
 
-import time
-from contextlib import contextmanager
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import scanpy as sc
 import torch
-from datetime import datetime
 
-from piano import Composer
+from piano import Composer, time_code
 
 try:
     import rapids_singlecell as rsc
@@ -53,15 +49,6 @@ def main():
         args.rach2 = 'Piano Concerto No. 2 in C minor, Op. 18'
         print("A Monsieur Sergei Rachmaninoff")
         print(vars(args))
-
-    @contextmanager
-    def time_code(label='Code Block'):
-        print(f'[{label}] start @: {datetime.now().strftime("%m_%d_%Y_%H:%M:%S")}', flush=True)
-        start = time.time()
-        yield
-        end = time.time()
-        min_, sec_ = int((end - start) / 60), int((end - start) % 60)
-        print(f'[{label}] runtime: {min_} min {sec_} sec', flush=True)
 
     # Run parameters
     run_name = f'piano_v{args.version}'

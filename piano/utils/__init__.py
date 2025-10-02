@@ -21,6 +21,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # Import all modules
 from .composer import Composer
 from .data import AnnDataset, SparseGPUAnnDataset, BackedAnnDataset, GPUBatchSampler, streaming_hvg_indices
+from .timer import time_code
 from .triton_sparse import SparseTritonMatrix
 
 # Specify all imports (i.e. `from piano.utils import *`)
@@ -34,6 +35,8 @@ __all__ = [
     'BackedAnnDataset',
     'GPUBatchSampler',
     'streaming_hvg_indices',
+    # # .timer
+    'time_code',
     # # .triton_sparse
     'SparseTritonMatrix',
 ]
