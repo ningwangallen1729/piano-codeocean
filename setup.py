@@ -20,10 +20,10 @@ from setuptools import setup, find_packages
 
 extra_reqs = {
     'rapids': [
-        'jax[cuda12]',
         'rapids-singlecell[rapids12]==0.13.1'
     ],
     'scvi-tools': [
+        'jax[cuda12]',
         'scvi-tools',
         'scib-metrics==0.5.3'
     ],
@@ -32,12 +32,12 @@ extra_reqs = {
         'torchaudio'
     ],
     'misc': [
-        'igraph'
-        'leidenalg'
-        'matplotlib'
-        'seaborn'
-        'joblib'
-        'jupyterlab'
+        'igraph',
+        'leidenalg',
+        'matplotlib',
+        'seaborn',
+        'joblib',
+        'jupyterlab',
         'pot'
     ],
 }
@@ -50,7 +50,7 @@ with open('README.md', mode='r') as readme:
 
 setup(
     name='PIANO',
-    version='0.0.0',
+    version='0.0.1',
     packages=find_packages(),
     install_requires=[
         'numpy>=2',

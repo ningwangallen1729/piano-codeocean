@@ -1,6 +1,6 @@
 [project]
 name = "piano-integration"
-version = "0.0.0"
+version = "0.0.1"
 description = "PIANO: Probabilistic Inference Autoencoder Networks for multi-Omics"
 readme = "README.md"
 requires-python = ">=3.10.18"
@@ -26,11 +26,11 @@ classifiers = [
 [project.optional-dependencies]
 rapids = [
     "torch>=2.2,<2.8",
-    "jax[cuda12]",
     "rapids-singlecell[rapids12]==0.13.1"
 ]
 scvi-tools = [
     "torch>=2.2,<2.8",
+    "jax[cuda12]",
     "scvi-tools",
     "scib-metrics==0.5.3"
 ]
