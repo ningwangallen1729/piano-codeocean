@@ -27,31 +27,13 @@ scikit-misc
 # Single cell imports
 anndata
 scanpy
-igraph     # Optional
-leidenalg  # Optional
 
 # PyTorch imports
 torch>=2.2,<2.8
 pyro-ppl
-torchvision  # Optional
-torchaudio   # Optional
-
-# Optional scVI imports
-jax[cuda12]
-scvi-tools
-scib-metrics==0.5.3
 
 # Optional rapids-singlecell imports
 rapids-singlecell[rapids12]==0.13.1
 
-# Optional miscellaneous utilities
-matplotlib
-seaborn
-joblib
-jupyterlab
-pot
-
 # Import PIANO
-# piano-integration
-# piano-integration[rapids]
-piano-integration[all]
+piano-integration[rapids]

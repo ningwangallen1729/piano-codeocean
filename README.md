@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 This repository contains the source code for PIANO: Probabilistic Inference Autoencoder Networks for multi-Omics.
 
 ## Installation:
-Create an uv environment as follows (recommended):
+Create an uv environment as follows (strongly recommended):
 ```
 # Install uv if not already installed
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -27,11 +27,25 @@ echo 'cache-dir = "/path/to/cache/directory/uv_cache"' >>~/.config/uv/uv.toml
 # Create uv environment
 uv venv --python 3.10
 source .venv/bin/activate
-uv pip install -r requirements.txt
-# Alternatively, run `uv pip install .[all]`
+uv pip install piano-integration[rapids]
+
+# If not using rapids single cell, use the following:
+uv pip install piano-integration
+
+If you have issues with installation, you can add the following flag: ` --index-strategy unsafe-best-match`, e.g.
+`uv pip install piano-integration[rapids] --index-strategy unsafe-best-match`
+`uv pip install piano-integration --index-strategy unsafe-best-match`
+`uv pip install piano-integration[all] --index-strategy unsafe-best-match`
+
+# Alternative installation methods:
+`uv pip install .[rapids]`  # Using rapids
+`uv pip install .`  # Not using rapids
+`uv pip install -r requirements_rapids.txt --index-strategy unsafe-best-match`  # Including rapids
+`uv pip install -r requirements_lite.txt --index-strategy unsafe-best-match`  # Minimal installation
+`uv pip install -r requirements.txt --index-strategy unsafe-best-match`  # Containing all optional libraries
 ```
 
-Create a conda environment as follows:
+Or, create a conda environment as follows (much slower than uv):
 ```
 # Install miniconda if not already installed
 mkdir -p ~/miniconda3
@@ -40,13 +54,16 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 
 # Create conda environment in a new terminal
-conda create -n piano python=3.10.18
+conda create -n piano python=3.10.18 -y
 conda activate piano
-pip install -r requirements.txt
+pip install piano-integration[rapids]
+
+# Similar options are available as those listed above for uv
 ```
 
-### Triton (torch.compile) compilation on ARM architectures:
+### Triton (torch.compile) compilation for ARM architectures:
 ```
+# Instructions for compiling triton from scratch
 git clone https://github.com/triton-lang/triton.git
 cd triton
 uv pip install -r python/requirements.txt # Using uv installed for ARM

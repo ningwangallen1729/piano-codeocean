@@ -18,60 +18,54 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from setuptools import setup, find_packages
 
+extra_reqs = {
+    'rapids': [
+        'rapids-singlecell[rapids12]==0.13.1'
+    ],
+    'scvi-tools': [
+        'jax[cuda12]',
+        'scvi-tools',
+        'scib-metrics==0.5.3'
+    ],
+    'torch': [
+        'torchvision',
+        'torchaudio'
+    ],
+    'misc': [
+        'igraph',
+        'leidenalg',
+        'matplotlib',
+        'seaborn',
+        'joblib',
+        'jupyterlab',
+        'pot'
+    ],
+}
+extra_reqs["all"] = sorted({pkg for group in extra_reqs.values() for pkg in group})
+for _ in extra_reqs:
+    extra_reqs[_].insert(0, 'torch>=2.2,<2.8')
+
+with open('README.md', mode='r') as readme:
+    long_description=readme.read()
+
 setup(
     name='PIANO',
-    version='0.0.0',
+    version='0.0.1',
     packages=find_packages(),
     install_requires=[
-        'numpy',
+        'numpy>=2',
         'pandas',
         'scipy',
         'scikit-misc',
         'anndata',
         'scanpy',
-        'torch',
+        'torch>=2.2,<2.8',
+        'pyro-ppl'
     ],
-    extras_require={
-        'rapids': [
-            'jax[cuda12]',
-            'rapids-singlecell[rapids12]==0.12.7'
-        ],
-        'scvi-tools': [
-            'scvi-tools',
-            'scib-metrics==0.5.3'
-        ],
-        'torch': [
-            'torchvision',
-            'torchaudio',
-        ],
-        'misc': [
-            'igraph'
-            'leidenalg'
-            'matplotlib'
-            'seaborn'
-            'joblib'
-            'jupyterlab'
-            'pot'
-        ],
-        'all': [
-            'igraph',
-            'leidenalg',
-            'torchvision',
-            'torchaudio',
-            'scvi-tools',
-            'scib-metrics==0.5.3',
-            'jax[cuda12]',
-            'rapids-singlecell[rapids12]==0.12.7',
-            'matplotlib',
-            'seaborn',
-            'joblib',
-            'jupyterlab',
-            'pot',
-        ],
-    },
+    extras_require=extra_reqs,
     author='Ning Wang',
     description='PIANO - Probabilistic Inference Autoencoder Networks for multi-Omics',
-    long_description=open('README.md').read(),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/ningwang1729/piano',
     classifiers=[
