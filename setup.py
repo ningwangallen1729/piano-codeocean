@@ -32,6 +32,27 @@ setup(
         'torch',
     ],
     extras_require={
+        'rapids': [
+            'jax[cuda12]',
+            'rapids-singlecell[rapids12]==0.12.7'
+        ],
+        'scvi-tools': [
+            'scvi-tools',
+            'scib-metrics==0.5.3'
+        ],
+        'torch': [
+            'torchvision',
+            'torchaudio',
+        ],
+        'misc': [
+            'igraph'
+            'leidenalg'
+            'matplotlib'
+            'seaborn'
+            'joblib'
+            'jupyterlab'
+            'pot'
+        ],
         'all': [
             'igraph',
             'leidenalg',
@@ -55,7 +76,6 @@ setup(
     url='https://github.com/ningwang1729/piano',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
     ],
     license='GPLv3',

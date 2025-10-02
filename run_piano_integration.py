@@ -28,6 +28,7 @@ np.set_printoptions(precision=3, suppress=True)
 torch.set_printoptions(precision=3, sci_mode=False)
 
 parser = argparse.ArgumentParser(description="Run PIANO pipeline")
+parser.add_argument('--rach2', action='store_true', help="Piano Concerto No. 2 in C minor, Op. 18")
 
 # Run I/O parameters
 parser.add_argument("--version", type=str, default='0.0', help="Name of run")
@@ -47,6 +48,8 @@ parser.add_argument("--batch_key", type=str, help="Batch key for HVG selection")
 parser.add_argument("--umap_labels", nargs='*', type=str, help="Colors for UMAPs")
 
 args = parser.parse_args()
+if args.rach2:
+    print("A Monsieur Sergei Rachmaninoff")
 print(args)
 
 @contextmanager
