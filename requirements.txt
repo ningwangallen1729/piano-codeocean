@@ -31,7 +31,7 @@ igraph     # Optional
 leidenalg  # Optional
 
 # PyTorch imports
-torch
+torch<2.8
 torchvision  # Optional
 torchaudio   # Optional
 
@@ -41,7 +41,7 @@ scib-metrics==0.5.3
 
 # Optional rapids-singlecell imports
 jax[cuda12]
-rapids-singlecell[rapids12]==0.12.7
+rapids-singlecell[rapids12]
 
 # Optional miscellaneous utilities
 matplotlib

@@ -10,7 +10,7 @@
 
 # Ignore builds and releases
 build/
-piano.egg-info/
+*.egg-info/
 .release/
 
 # Ignore miscellaneous files
