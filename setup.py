@@ -34,7 +34,6 @@ extra_reqs = {
     'misc': [
         'igraph',
         'leidenalg',
-        'matplotlib',
         'seaborn',
         'joblib',
         'jupyterlab',
@@ -53,6 +52,7 @@ setup(
     version='0.0.1',
     packages=find_packages(),
     install_requires=[
+        'matplotlib',
         'numpy>=2',
         'pandas',
         'scipy',

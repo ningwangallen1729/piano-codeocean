@@ -5,6 +5,7 @@ description = "PIANO: Probabilistic Inference Autoencoder Networks for multi-Omi
 readme = "README.md"
 requires-python = ">=3.10.18"
 dependencies = [
+    "matplotlib",
     "numpy>=2",
     "pandas",
     "scipy",
@@ -43,7 +44,6 @@ misc = [
     "torch>=2.2,<2.8",
     "igraph",
     "leidenalg",
-    "matplotlib",
     "seaborn",
     "joblib",
     "jupyterlab",
