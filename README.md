@@ -27,11 +27,23 @@ echo 'cache-dir = "/path/to/cache/directory/uv_cache"' >>~/.config/uv/uv.toml
 # Create uv environment
 uv venv --python 3.10
 source .venv/bin/activate
-uv pip install -r requirements.txt
-# Alternatively, run `uv pip install .[all]`
+uv pip install piano-integration[rapids]
+
+# If not using rapids single cell, use the following:
+uv pip install piano-integration
+
+If you have issues with installation, you can add the following flag: ` --index-strategy unsafe-best-match`, e.g.
+`uv pip install piano-integration[rapids] --index-strategy unsafe-best-match`
+or
+`uv pip install piano-integration --index-strategy unsafe-best-match`
+
+# Alternative installation methods:
+`uv pip install .[rapids]`  # Using rapids
+`uv pip install .`  # Not using rapids
+`uv pip install -r requirements.txt --index-strategy unsafe-best-match`  # Containing other optional libraries
 ```
 
-Create a conda environment as follows:
+Or, create a conda environment as follows:
 ```
 # Install miniconda if not already installed
 mkdir -p ~/miniconda3
@@ -42,11 +54,14 @@ rm ~/miniconda3/miniconda.sh
 # Create conda environment in a new terminal
 conda create -n piano python=3.10.18
 conda activate piano
-pip install -r requirements.txt
+pip install piano-integration[rapids]
+
+# Similar options are available as using uv above
 ```
 
-### Triton (torch.compile) compilation on ARM architectures:
+### Triton (torch.compile) compilation for ARM architectures:
 ```
+# Instructions for compiling triton from scratch
 git clone https://github.com/triton-lang/triton.git
 cd triton
 uv pip install -r python/requirements.txt # Using uv installed for ARM

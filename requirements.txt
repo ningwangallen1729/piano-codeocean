@@ -19,7 +19,7 @@
 --find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 # Machine learning imports
-numpy
+numpy>=2
 pandas
 scipy
 scikit-misc
@@ -31,7 +31,8 @@ igraph     # Optional
 leidenalg  # Optional
 
 # PyTorch imports
-torch<2.8
+torch>=2.2,<2.8
+pyro-ppl
 torchvision  # Optional
 torchaudio   # Optional
 
@@ -49,3 +50,8 @@ seaborn
 joblib
 jupyterlab
 pot
+
+# Import PIANO
+# piano-integration
+# piano-integration[rapids]
+piano-integration[all]

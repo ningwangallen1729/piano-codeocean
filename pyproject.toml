@@ -5,13 +5,14 @@ description = "PIANO: Probabilistic Inference Autoencoder Networks for multi-Omi
 readme = "README.md"
 requires-python = ">=3.10.18"
 dependencies = [
-    "numpy",
+    "numpy>=2",
     "pandas",
     "scipy",
     "scikit-misc",
     "anndata",
     "scanpy",
-    "torch<2.8",
+    "torch>=2.2,<2.8",
+    "pyro-ppl"
 ]
 authors = [
     {name = "Ning Wang", email = "nw8333@princeton.edu"}
@@ -24,18 +25,22 @@ classifiers = [
 ]
 [project.optional-dependencies]
 rapids = [
+    "torch>=2.2,<2.8",
     "jax[cuda12]",
     "rapids-singlecell[rapids12]==0.13.1"
 ]
 scvi-tools = [
+    "torch>=2.2,<2.8",
     "scvi-tools",
     "scib-metrics==0.5.3"
 ]
 torch = [
+    "torch>=2.2,<2.8",
     "torchvision",
     "torchaudio",
 ]
 misc = [
+    "torch>=2.2,<2.8",
     "igraph",
     "leidenalg",
     "matplotlib",
