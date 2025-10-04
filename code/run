@@ -1,0 +1,33 @@
+#!/bin/bash
+
+: '
+PIANO: Probabilistic Inference Autoencoder Networks for multi-Omics  
+Copyright (C) 2025 Ning Wang  
+
+This program is free software: you can redistribute it and/or modify  
+it under the terms of the GNU General Public License as published by  
+the Free Software Foundation, either version 3 of the License, or  
+(at your option) any later version.  
+
+This program is distributed in the hope that it will be useful,  
+but WITHOUT ANY WARRANTY; without even the implied warranty of  
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  
+GNU General Public License for more details.  
+
+You should have received a copy of the GNU General Public License  
+along with this program.  If not, see <https://www.gnu.org/licenses/>.  
+'
+
+# For compilation-dependent reproducibility
+export CUBLAS_WORKSPACE_CONFIG=:4096:8 
+
+# Run PIANO integration
+python3 /code/run_piano_integration.py \
+    --version 0.0.3 \
+    --adata_path /data/Whole_brain_human_mouse_datasets__07_13_2025/adata_orthologs_subset_100_per_cluster_without_Macosko.h5ad \
+    --outdir /results/piano_whole_brain_integration \
+    --n_top_genes 4096 \
+    --batch_key Species_label \
+    --categorical_covariate_keys Species_label Platform_label \
+    --max_epochs 200 \
+    --umap_labels Species_label Atlas_label Platform_label Region_label

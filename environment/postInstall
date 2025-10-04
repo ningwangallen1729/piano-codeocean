@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+# Install PIANO
+curl -LsSf https://astral.sh/uv/install.sh | sh
+/root/.local/bin/uv pip install --system piano-integration[rapids]

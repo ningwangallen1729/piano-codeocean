@@ -1,0 +1,6 @@
+metadata_version: 1
+name: PIANO Human/Mouse Whole Brain Integration v0.0.3
+description: Code Ocean Capsule of PIANO integration on human whole brain data (Siletti
+  et al., 2023) with mouse whole brain data (Yao et al. 2023)
+authors:
+- name: Ning Wang

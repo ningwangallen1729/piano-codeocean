@@ -1,0 +1,61 @@
+{
+	"version": 1,
+	"base_image": "codeocean/cuda-miniconda-jupyterlab:latest",
+	"post_install": true,
+	"options": {
+		"registry_host_arg": true,
+		"git_ask_pass": true,
+		"mount_secrets": true
+	},
+	"installers": {
+		"apt": {
+			"packages": [
+				{
+					"name": "build-essential",
+					"version": "12.9ubuntu3"
+				},
+				{
+					"name": "curl",
+					"version": "7.81.0-1ubuntu1.21"
+				},
+				{
+					"name": "emacs",
+					"version": "1:27.1+1-3ubuntu5.2"
+				},
+				{
+					"name": "gcc",
+					"version": "4:11.2.0-1ubuntu1"
+				},
+				{
+					"name": "libcurl4-gnutls-dev",
+					"version": "7.81.0-1ubuntu1.21"
+				},
+				{
+					"name": "libhdf5-dev",
+					"version": "1.10.7+repack-4ubuntu2"
+				},
+				{
+					"name": "libssl-dev",
+					"version": "3.0.2-0ubuntu1.20"
+				},
+				{
+					"name": "libxml2-dev",
+					"version": "2.9.13+dfsg-1ubuntu0.9"
+				},
+				{
+					"name": "libzmq3-dev",
+					"version": "4.3.4-2"
+				},
+				{
+					"name": "openssh-client",
+					"version": "1:8.9p1-3ubuntu0.13"
+				},
+				{
+					"name": "wget",
+					"version": "1.21.2-2ubuntu1.1"
+				}
+			],
+			"install_software_properties_common": true
+		}
+	}
+}
