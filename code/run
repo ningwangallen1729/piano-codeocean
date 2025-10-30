@@ -24,7 +24,7 @@ export CUBLAS_WORKSPACE_CONFIG=:4096:8
 # Run PIANO integration
 python3 /code/run_piano_integration.py \
     --version 0.0.3 \
-    --adata_path /data/Whole_brain_human_mouse_datasets__07_13_2025/adata_orthologs_subset_100_per_cluster_without_Macosko.h5ad \
+    --adata_path /data/human_and_mouse_whole_brain_datasets__10_30_2025/adata_100_per_cluster.h5ad \
     --outdir /results/piano_whole_brain_integration \
     --n_top_genes 4096 \
     --batch_key Species_label \

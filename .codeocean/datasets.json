@@ -2,8 +2,8 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "c2ec27bb-56f0-4060-b2d9-69ec824d63f8",
-			"mount": "Whole_brain_human_mouse_datasets__07_13_2025"
+			"id": "264405cb-ab66-42f8-9be2-f74faa11e5b3",
+			"mount": "human_and_mouse_whole_brain_datasets__10_30_2025"
 		}
 	]
 }
